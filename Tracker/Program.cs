@@ -1,5 +1,5 @@
 ﻿
-class Habbit
+class Habit
 {
     public string Name { get; set; }
     public int Streak {get; set;}
@@ -10,10 +10,10 @@ class Habbit
 
 class  Output
 { 
-    static public void HabbitOutput(Habbit habbit)
+    static public void habitOutput(Habit habit)
     {
-        Console.WriteLine($"{habbit.Name} {habbit.Streak}");
-        int i = habbit.Streak;
+        Console.WriteLine($"{habit.Name} {habit.Streak}");
+        int i = habit.Streak;
         while (i>0)
         {
             Console.Write("*");
@@ -21,31 +21,30 @@ class  Output
         }
     }
 
-    static public void HabbitInfo(Habbit habbit)
+    static public void habitInfo(Habit habit)
     {
-        if (habbit.Comment != null) Console.WriteLine($"{habbit.Comment}");
-        Console.WriteLine($"{habbit.Name} {habbit.Streak} {habbit.Date}");
+        if (habit.Comment != null) Console.WriteLine($"{habit.Comment}");
+        Console.WriteLine($"{habit.Name} {habit.Streak} {habit.Date}");
     }
 }
 
 class Interface
 {
-    static public void Menue()
+    static public void Menu()
     {
         Console.WriteLine("Как успехи и с чего начнем?");
         Console.WriteLine("Что успел сделать за сегодня?"); //после этой строчки должен выводиться список задач и должна быть возможность отметить привычки которые соблюдаюся
         Console.WriteLine();
     }
-
 }
 
 class program
 {
     static void Main()
     {
-        Habbit habbit = new Habbit();
-        habbit.Name = "test";
-        habbit.Streak = 8;
-        Output.HabbitOutput(habbit);
+        Habit habit = new Habit();
+        habit.Name = "test";
+        habit.Streak = 8;
+        Output.habitOutput(habit);
     }
 }
